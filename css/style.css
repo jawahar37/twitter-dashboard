@@ -4,10 +4,6 @@ swym-purple:	#4c3469
 */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto+Slab:100,400');
 
-*:focus{
-	outline: none;
-}
-
 #landing{
 	background-color: #4c3469;
 	height: 100vh;
