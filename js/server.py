@@ -4,9 +4,12 @@ from tweepy import OAuthHandler
 from flask import Flask
 from flask import json
 from flask import Response
+from flask_cors import CORS
 
 app = Flask(__name__)
- 
+cors = CORS(app, resources={r"/user/*": {"origins": "*"}}) 
+
+
 class TwitterClient(object):
     def __init__(self):
         '''
@@ -75,4 +78,5 @@ def show_user_profile(username):
         status=200,
         mimetype='application/json'
     )
+    
     return response
