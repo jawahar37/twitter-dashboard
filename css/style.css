@@ -1,0 +1,62 @@
+/*
+swym-green:		#8cc24a
+swym-purple:	#4c3469
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto+Slab:100,400');
+
+*:focus{
+	outline: none;
+}
+
+#landing{
+	background-color: #4c3469;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+
+	padding-top: 200px;
+
+	text-align: center;
+	color: white;
+}
+
+#landing #measure {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 60px;
+	margin-bottom: 20px; 
+}
+
+#landing #get-started {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 100;
+	font-size: 40px;
+}
+
+#username-form {
+	position: relative;
+	margin: 40px auto 0;
+	width: 40%;
+	color: #4c3469;
+	font-size: 25px;
+}
+
+#username-form #at-sign {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+
+}
+
+#username-form #username {
+	width: 100%;
+	padding: 20px 20px 20px 48px;
+	border: none;
+	border-radius: 8px;
+}
+
+#username-form button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	border: none;
+}
