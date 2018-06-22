@@ -4,6 +4,12 @@ swym-purple:	#4c3469
 */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto+Slab:100,400');
 
+body {
+	background-color: #4c3469;
+	height: 100vh;
+	overflow-y: hidden;
+}
+
 #landing{
 	background-color: #4c3469;
 	height: 100vh;
@@ -63,4 +69,75 @@ swym-purple:	#4c3469
 	top: 20px;
 	right: 20px;
 	border: none;
+}
+
+#profile{
+	background-color: #4c3469;
+	height: 50vh;
+	width: 100%;
+	overflow: hidden;
+
+	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+#profile .details {
+	margin: 50px 0 0 60px;
+}
+
+#profile #image-name {
+	width: 300px;
+	height: 200px;
+	float: left;
+}
+
+#profile #image {
+	width: 150px;
+	vertical-align: middle;
+	margin: 0 auto;
+	display: block;
+
+	border: 4px solid white;
+	border-radius: 50%;
+}
+
+#profile #name{
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 25px;
+}
+
+.vertical-seperator {
+	width: 3px;
+	background-color: white;
+	border-radius: 2px;
+	height: 150px;
+	margin-top: 25px;
+	float: left;
+}
+
+#profile .info {
+	width: 200px;
+	height: 200px;
+	float: left;
+	text-align: center;
+}
+
+#profile .info .title {	
+	text-decoration: underline;
+	margin-top: 40px;
+	font-size: 30px;
+	font-family: 'Roboto Slab', sans-serif;
+}
+
+#profile .info .data {
+	margin-top: 20px;
+	font-size: 25px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }

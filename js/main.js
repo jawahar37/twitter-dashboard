@@ -7,7 +7,7 @@ var getUserJSON = function(username) {
 			dataType: 'json',
 			async: false,
 			success: function(data) {
-				console.log('Recieved profile data for user: ', username);
+				console.log('Received profile data for user: ', username);
 				user_json = data;
 			},
 			error: function(r, s, e) {
@@ -23,6 +23,33 @@ var getUserJSON = function(username) {
 	return user_json;
 }
 
+var populateProfile = function(data) {
+	if(!data.default_profile_image) {
+		$('#profile #image').attr('src', data.profile_image_url.slice(0, -10) + '400x400.jpg')
+	}
+	$('#profile #name').text(data.name);
+
+	console.log(data.followers_count, data.friends_count, data.favourites_count)
+	$('#profile #followers .data').text(data.followers_count);
+	$('#profile #friends .data').text(data.friends_count);
+	$('#profile #favourites .data').text(data.favourites_count);
+}
+
+var clearProfile = function() {
+	$('#profile #image').attr('src', 'images/default_profile_image.png');
+	$('#profile #name').text('');
+
+	console.log(data.followers_count, data.friends_count, data.favourites_count)
+	$('#profile #followers .data').text('');
+	$('#profile #friends .data').text('');
+	$('#profile #favourites .data').text('');
+}
+
+var activateDetailsView = function(data) {
+	populateProfile(data);
+	$('#landing').addClass('hidden')
+}
+
 $(document).ready(function(){
 	$('#username-form').submit(function(ev) {
 		ev.preventDefault();
@@ -30,6 +57,8 @@ $(document).ready(function(){
 
 		profile_data = getUserJSON($('#username-form #username').val());
 		console.log(profile_data);
+		
+		activateDetailsView(profile_data);
 	});
 });
 	
