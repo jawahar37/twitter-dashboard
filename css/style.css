@@ -50,6 +50,14 @@ swym-purple:	#4c3469
 	border-radius: 8px;
 }
 
+#username-form.has-error #username {
+	box-shadow: 0 0 5px 0 red;
+}
+
+#username-form.has-error {
+	color: red;
+}
+
 #username-form button {
 	position: absolute;
 	top: 20px;

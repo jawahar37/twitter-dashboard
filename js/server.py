@@ -33,9 +33,17 @@ api = TwitterClient().api
 
 @app.route('/user/<username>')
 def show_user_profile(username):
+    try :
+        user_json = api.get_user(username)._json
+    except tweepy.TweepError as e:
+        if e.api_code == 63 or e.api_code == 50:
+           return Response(status = 404)
+        else:
+            print(e.reason)
+            raise
 
     response = Response(
-        response=json.dumps(api.get_user(username)._json),
+        response=json.dumps(user_json),
         status=200,
         mimetype='application/json'
     )

@@ -9,6 +9,11 @@ var getUserJSON = function(username) {
 			success: function(data) {
 				console.log('Recieved profile data for user: ', username);
 				user_json = data;
+			},
+			error: function(r, s, e) {
+				if(e == 'NOT FOUND') {
+					$('#username-form').addClass('has-error');
+				}
 			}
 		});
 	}
@@ -21,6 +26,8 @@ var getUserJSON = function(username) {
 $(document).ready(function(){
 	$('#username-form').submit(function(ev) {
 		ev.preventDefault();
+		$('#username-form').removeClass('has-error')
+
 		profile_data = getUserJSON($('#username-form #username').val());
 		console.log(profile_data);
 	});
